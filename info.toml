@@ -1,9 +1,8 @@
 [meta]
 name = "PBistory"
-author = "Josephine"
+author = "slowpiou"
 category = "Race"
 version = "0.0.1"
-siteid = 532452342
 
 [script]
 dependencies = [ "GrindingStats", "mapinfo" ]
