@@ -8,24 +8,24 @@ Example of output:
 
 ```json
 {
-    date: <timestamp>, //TOTD Date or "" if not TOTD
-    mapname: 'Downside Up',
-    mapper: 'TNTree.',
-    at_time: 19676,
-    uid: 'WEa0Z7XFk8zus0YUQuJo8l_HMC',
-    pbs: [
+    "date": "<timestamp>", //integer representing TOTD Date or "" if not TOTD
+    "mapname": "Downside Up",
+    "mapper": "TNTree.",
+    "at_time": 19676,
+    "uid": "WEa0Z7XFk8zus0YUQuJo8l_HMC",
+    "pbs": [
         {
-            time: 19650,
-            hunt_time: <timestamp>, //hunting time from the GrindingStats plugin
-            finishes: 12,
-            attempts: 46,
-            rank: 603,
-            date: <timestamp>, //Time::Stamp
-            ats: 661,
-            wr: 18151,
+            "time": 19650,
+            "hunt_time": "<timestamp>", //integer representing the hunting time from the GrindingStats plugin
+            "finishes": 12,
+            "attempts": 46,
+            "rank": 603,
+            "date": "<timestamp>", //integer Time::Stamp
+            "ats": 661,
+            "wr": 18151,
         },
     ],
-    updatedAt: <timestamp>, //Time::Stamp
+    "updatedAt": "<timestamp>", //integer Time::Stamp
 },
 ```
 
