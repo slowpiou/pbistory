@@ -8,7 +8,7 @@ Example of output:
 
 ```json
 {
-    "date": "<timestamp>", //integer representing TOTD Date or "" if not TOTD
+    "date": "<timestamp>", // TOTD Date or "" if not TOTD
     "mapname": "Downside Up",
     "mapper": "TNTree.",
     "at_time": 19676,
@@ -24,6 +24,7 @@ Example of output:
             "ats": 661,
             "wr": 18151,
         },
+        ...
     ],
     "updatedAt": "<timestamp>", //integer Time::Stamp
 },
