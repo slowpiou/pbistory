@@ -25,7 +25,7 @@ void Main() {
 
         if (did_enter_new_map) {
             uid = map.MapInfo.MapUid;
-            mapname = map.MapInfo.Name;
+            mapname = MapInfo::GetCurrentMapInfo().CleanName;
             author = map.MapInfo.AuthorNickName;
             AT = map.MapInfo.TMObjective_AuthorTime;
             gold = map.MapInfo.TMObjective_GoldTime;
