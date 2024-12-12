@@ -153,6 +153,9 @@ int get_at_count(const string &in map_uid) {
 
     Json::Value json = Json::Parse(req.String());
     Json::Value medals = json['medals'];
+    
+    if (medals[0].Get("medal") != "Author") return 0;
+    
     Json::Value closestAT = medals[0].Get("score");
     int ats = get_player_position(map_uid, closestAT);
     return ats - 1;
