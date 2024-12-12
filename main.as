@@ -62,7 +62,7 @@ void Main() {
                     newpb["time"] = pbest;
                     pbs.Add(newpb);
                     content["pbs"] = pbs;
-                    Json::ToFile(folder_location + "/" + uid + '.json', content);
+                    Json::ToFile(folder_location + "/" + uid + '.json', content, true);
                     UI::ShowNotification("New map \\$f66" + mapname + "\\$g and PB: \\$f66" + pbest + "\\$g saved!", 3000);
                 } else {
                     auto map_data = Json::FromFile(folder_location + "/" + uid + '.json');   
@@ -78,20 +78,22 @@ void Main() {
                     content["date"] = MapInfo::GetCurrentMapInfo().TOTDDate;
                     auto pbs = Json::Array();
                     pbs = map_data.Get("pbs");
-                    auto newpb = Json::Object();
-                    newpb["finishes"] = GrindingStats::GetTotalFinishes();
-                    newpb["attempts"] = GrindingStats::GetTotalResets();
-                    newpb["hunt_time"] = GrindingStats::GetTotalTime();
-                    newpb["rank"] = get_player_position(uid,pbest);;
-                    newpb["ats"] = get_at_count(uid);
-                    newpb["wr"] = get_wr(uid);
+                    if (pbest < pbs[pbs.Length-1].Get("time")) {
+                        auto newpb = Json::Object();
+                        newpb["finishes"] = GrindingStats::GetTotalFinishes();
+                        newpb["attempts"] = GrindingStats::GetTotalResets();
+                        newpb["hunt_time"] = GrindingStats::GetTotalTime();
+                        newpb["rank"] = get_player_position(uid,pbest);;
+                        newpb["ats"] = get_at_count(uid);
+                        newpb["wr"] = get_wr(uid);
                         newpb["players_count"] = MapInfo::GetCurrentMapInfo().NbPlayers;
-                    newpb["date"] = Time::Stamp;
-                    newpb["time"] = pbest;
-                    pbs.Add(newpb);
-                    content["pbs"] = pbs;
-                    Json::ToFile(folder_location + "/" + uid + '.json', content);
-                    UI::ShowNotification("New PB: " + pbest +" saved!", 3000);
+                        newpb["date"] = Time::Stamp;
+                        newpb["time"] = pbest;
+                        pbs.Add(newpb);
+                        content["pbs"] = pbs;
+                        Json::ToFile(folder_location + "/" + uid + '.json', content, true);
+                        UI::ShowNotification("New PB: " + pbest +" saved!", 3000);
+                    }
                 }
                 
             }
