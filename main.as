@@ -57,7 +57,7 @@ void Main() {
                     newpb["rank"] = get_player_position(uid, pbest);
                     newpb["ats"] = get_at_count(uid);
                     newpb["wr"] = get_wr(uid);
-                    newpb["players_count"] = MapInfo::GetCurrentMapInfo().NbPlayers + 1;
+                    newpb["players_count"] = MapInfo::GetCurrentMapInfo().NbPlayers;
                     newpb["date"] = Time::Stamp;
                     newpb["time"] = pbest;
                     pbs.Add(newpb);
@@ -85,7 +85,7 @@ void Main() {
                     newpb["rank"] = get_player_position(uid,pbest);;
                     newpb["ats"] = get_at_count(uid);
                     newpb["wr"] = get_wr(uid);
-                    newpb["players_count"] = MapInfo::GetCurrentMapInfo().NbPlayers + 1;
+                        newpb["players_count"] = MapInfo::GetCurrentMapInfo().NbPlayers;
                     newpb["date"] = Time::Stamp;
                     newpb["time"] = pbest;
                     pbs.Add(newpb);
